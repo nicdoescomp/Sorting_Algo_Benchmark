@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red251\green0\blue7;\red0\green0\blue0;\red251\green0\blue7;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c12195\c0;\cssrgb\c0\c1\c1;\cssrgb\c100000\c12195\c0;
+}
+\margl1440\margr1440\vieww29740\viewh15880\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 // Initialize constants for array size\
+Initialize constant \cf2 SIZE\cf0  to 20\
+\
+// Initialize arrays with numbers for sorting (this is in main but decided to leave this on top for clarity)\
+Initialize array `\cf2 Array1\cf0 ` with values: [12, 5, 18, 2, 20, 1, 15, 8, 10, 13, 6, 17, 3, 19, 11, 7, 14, 4, 9, 16]\
+Initialize array `\cf2 Array2\cf0 ` with values: [12, 5, 18, 2, 20, 1, 15, 8, 10, 13, 6, 17, 3, 19, 11, 7, 14, 4, 9, 16]\
+\
+// Function to swap two elements\
+Function \cf2 swap\cf0 (\cf2 a\cf0 , \cf2 b\cf0 ):\
+    Initialize \cf2 temp\cf0  as \cf2 a\cf0 \
+    Set \cf2 a\cf0  to \cf2 b\cf0 \
+    Set \cf2 b\cf0  to \cf2 temp\cf0 \
+\
+// Function for Bubble Sort\
+Function \cf2 bubbleSort\cf0 (\cf2 Array1\cf0 , \cf2 SIZE\cf0 ):\
+    Initialize `\cf2 bbl_counter\cf0 ` to 0\
+    For \cf2 i\cf0  from 0 to \cf2 SIZE\cf0  - 2:\
+        For \cf2 j \cf0 from 0 to \cf2 SIZE\cf0  - 2 - i:\
+            If \cf2 Array1\cf0 [\cf2 j\cf0 ] > \cf2 Array1\cf0 [\cf2 j \cf0 + 1]:\
+                Call \cf2 swap\cf0 (\cf2 Array1\cf0 [\cf2 j\cf0 ], \cf2 Array1\cf0 [\cf2 j\cf0  + 1])\
+                Increment `\cf2 bbl_counter\cf0 ` by 1\
+    Return `\cf2 bbl_counter\cf0 `\
+\
+// Function for Selection Sort\
+Function \cf2 selectionSort\cf0 (\cf2 Array2\cf0 , \cf2 SIZE\cf0 ):\
+    Initialize `\cf2 select_counter\cf0 ` to 0\
+    For\cf2  i\cf0  from 0 to \cf2 SIZE\cf0  - 1:\
+        Set `\cf2 min_index\cf0 ` to i\
+        For \cf2 j\cf0  from \cf2 i\cf0  + 1 to \cf2 SIZE\cf0  - 1:\
+            If \cf2 Array2\cf0 [\cf2 j\cf0 ] < \cf2 Array2\cf0 [\cf2 min_index\cf0 ]:\
+                Set `\cf2 min_index\cf0 ` to \cf2 j\cf0 \
+        If `\cf2 min_index\cf0 ` is not equal to \cf2 i\cf0 :\
+            Call swap(\cf2 Array2\cf3 [\cf2 i\cf0 ], \cf2 Array2\cf0 [\cf2 min_index\cf0 ])\
+            Increment `\cf2 select_counter\cf0 ` by 1\
+    Return `\cf2 select_counter\cf0 `\
+\
+// Main program\
+Function Main:\
+    \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 initialize array `\cf4 Array1\cf0 ` \
+Initialize array `\cf4 Array2\cf0 `\
+Print "The number of swaps used in Bubble Sort:"\
+Call \cf2 bubbleSort\cf0 (\cf2 Array1\cf0 , \cf2 SIZE\cf0 )    \
+Print "The number of swaps used in Selection Sort:"\
+Call \cf2 selectionSort\cf0 (\cf2 Array2\cf0 , \cf2 SIZE\cf0 ) }
